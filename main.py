@@ -1,6 +1,7 @@
 # edit date : 2024-04-26
 # version : 1.9.0
-
+import os
+os.system('pip install --upgrade selenium')
 from random import randint
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,16 +11,17 @@ from modules.selenium import *
 import time
 import webbrowser
 
-chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+# chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
 
 ############# 자동 예매 원하는 설정으로 변경 ##############
 
-member_number = "0000000000" # 회원번호
-password= "password" # 비밀번호
-arrival = "동대구" # 출발지
-departure = "수서" # 도착지
-standard_date = "20240506" # 기준날짜 ex) 20221101
-standard_time = "12" # 기준 시간 ex) 00 - 22 // 2의 배수로 입력
+member_number = "2489217340" # 회원번호
+password= "echang708!" # 비밀번호
+arrival = "수서" # 출발지
+departure = "울산(통도사)" # 도착지
+standard_date = "20241221" # 기준날짜 ex) 20221101
+standard_time = "14" # 기준 시간 ex) 00 - 22 // 2의 배수로 입력
 
 """
 현재 페이지에 나타난 기차 몇번째 줄부터 몇번째 줄의 기차까지 조회할지 선택 
@@ -163,7 +165,7 @@ while True:
 
         # 2초 대기
         driver.implicitly_wait(10)
-        time.sleep(2)
+        time.sleep(10)
 
     else:
         time.sleep(1000)
